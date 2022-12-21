@@ -18,7 +18,7 @@ public class Day07_IFrame extends TestBase {
         String header = driver.findElement(By.xpath("//h3")).getText();
         Assert.assertTrue(header.contains("Editor"));
 
-//        NOTE: textbox is in the iframe so we have to switch to teh iframe
+//        NOTE: textbox is in the iframe, so we have to switch to teh iframe
 //        GETTING IN THE IFRAME
 //        THERE ARE 3 WAYS TO SWITCH TO AN IFRAME
         driver.switchTo().frame(0);// 1. INDEX OF IFRAME. INDEX STARTS AT 0
