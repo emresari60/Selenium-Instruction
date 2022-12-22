@@ -7,9 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import utilities.TestBase;
 
-import javax.swing.*;
-
-public class Daay08_Actions1 extends TestBase {
+public class Day08_Actions1 extends TestBase {
 
     @Test
     public void rightClickTest() throws InterruptedException {
