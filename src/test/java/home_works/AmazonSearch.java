@@ -22,11 +22,13 @@ public class AmazonSearch {
         driver.findElement(By.id("twotabsearchtextbox")).sendKeys("porcelain teapot");
         driver.findElement(By.id("nav-search-submit-button")).click();
         //driver.findElement(By.xpath("//div[@class='rush-component s-latency-cf-section']"))
+        String result=driver.findElement(By.xpath("//*[@id=\"search\"]/span/div/h1/div/div[1]/div/div/span[1]")).getText().substring(2,4);
+        System.out.println("Total Items = " + result);  
 
-
+        //TC02_Order the the tea pot prices, find the min, max, and average price to the nearest cent.
 
     }
 
 
-    //TC02_Order the the tea pot prices, find the min, max, and average price to the nearest cent.
+
 }

@@ -66,7 +66,7 @@ public class Day07_WindowHandle1 extends TestBase {
 //        Switch back to window 1
         driver.switchTo().window(window1Handle);
         Thread.sleep(5000);
-        //        Switch back to window 2
+//        Switch back to window 2
         driver.switchTo().window(window2Handle);
         Thread.sleep(5000);
 //        Switch back to window 1
