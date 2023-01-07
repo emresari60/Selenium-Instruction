@@ -52,9 +52,9 @@ public class Day09_Actions4 extends TestBase {
 
         //user Actions class to move source into target
         Actions actions=new Actions(driver);
-        actions.clickAndHold(source).moveByOffset(160,30).build().perform();
-
-        actions.dragAndDropBy(source,160,30).perform();
+       // actions.clickAndHold(source).moveByOffset(160,30).build().perform();
+        actions.clickAndHold(source).moveToElement(target).build().perform();
+       // actions.dragAndDropBy(source,160,30).perform();
     }
 
 
