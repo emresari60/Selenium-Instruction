@@ -1,32 +1,30 @@
 package tests;
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import utilities.TestBase;
-
 import java.util.List;
-
 public class Day12_WebTables extends TestBase {
+    private static Logger logger = LogManager.getLogger(Day12_WebTables.class.getName());
     @Test
     public void printTableData(){
-        driver.get("https://the-internet.herokuapp.com/t         q                                                                                                                                       ables");
+        logger.info("Going to the home page");
+        driver.get("https://the-internet.herokuapp.com/tables");
 //        Task 1 : Print the entire table
         System.out.println("PRINT ENTIRE TABLE***");
+        logger.info("Printing the webtable information");
         String entireTable = driver.findElement(By.xpath("//table[@id='table1']")).getText();
         System.out.println(entireTable);
-
         List<WebElement> allTableElements = driver.findElements(By.xpath("//table[@id='table1']//td"));
         for (WebElement eachElement : allTableElements){
             System.out.println(eachElement.getText());
+            logger.info(eachElement.getText());
         }
-
 //        We can get specific cell data
         System.out.println("5th DATA in the table "+allTableElements.get(5).getText());
-
-
     }
-
     @Test
     public void printRows(){
         //        Task 2 : Print All Rows
@@ -41,9 +39,7 @@ public class Day12_WebTables extends TestBase {
         System.out.println("5th Row Data : "+allRows.get(4).getText());
 //        Task 3 : Print Last row data only
         System.out.println("Last Row Data : "+allRows.get(allRows.size()-1).getText());
-
     }
-
     @Test
     public void printColumns(){
         driver.get("https://the-internet.herokuapp.com/tables");
@@ -54,10 +50,7 @@ public class Day12_WebTables extends TestBase {
             System.out.println("Row "+colNum+" Column 5 => "+eachData.getText());
             colNum++;
         }
-
     }
-
-
     //        HOMEWORK
 //        Task 5 : Write a method that accepts 2 parameters
 //        Parameter 1 = row number
@@ -65,9 +58,7 @@ public class Day12_WebTables extends TestBase {
 //        printData(2,3);  => prints data in 2nd row 3rd column
     public void printData(int rowNum, int colNum){
         String xpath = "//table[@id='table1']//tr["+rowNum+"]//td["+colNum+"]";
-
     }
-
     @Test
     public void printDataTest(){
         printData(2,3);//fbach@yahoo.com
